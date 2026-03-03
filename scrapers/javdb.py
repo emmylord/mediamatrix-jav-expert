@@ -108,7 +108,11 @@ class JavDBScraper(BaseJavScraper):
         if cover_el:
             src = cover_el.get("src") or cover_el.get("data-src") or ""
             if src:
-                result["poster_url"] = src if src.startswith("http") else f"https:{src}"
+                url = src if src.startswith("http") else f"https:{src}"
+                result["fanart_url"] = url
+                # TODO: 将 fanart 横版图裁切右半边作为 poster 竖版图，
+                #       目前用同一张图兜底；DMM 开启时会由 mediumUrl 覆盖为真正的竖版
+                result["poster_url"] = url
 
         # panel-block 信息行（含评分）
         for block in soup.select(".panel-block"):

@@ -192,6 +192,9 @@ class TestParseDetail:
     def test_poster_url(self):
         assert self.result["poster_url"] == "https://pics.example.com/cover.jpg"
 
+    def test_fanart_url(self):
+        assert self.result["fanart_url"] == "https://pics.example.com/cover.jpg"
+
     def test_av_code(self):
         # ID 分两个 <a> 元素：SSIS + -001，拼接后大写
         assert self.result["av_code"] == "SSIS-001"
@@ -331,9 +334,11 @@ class TestPosterUrlProtocol:
         soup = BeautifulSoup(html, "lxml")
         result = self.s._parse_detail(soup, "https://javdb.com/v/x")
         assert result["poster_url"].startswith("https:")
+        assert result["fanart_url"].startswith("https:")
 
     def test_absolute_url_unchanged(self):
         html = '<img class="video-cover" src="https://pics.example.com/cover.jpg" />'
         soup = BeautifulSoup(html, "lxml")
         result = self.s._parse_detail(soup, "https://javdb.com/v/x")
         assert result["poster_url"] == "https://pics.example.com/cover.jpg"
+        assert result["fanart_url"] == "https://pics.example.com/cover.jpg"

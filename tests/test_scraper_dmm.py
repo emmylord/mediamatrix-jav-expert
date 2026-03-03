@@ -108,10 +108,13 @@ class TestParseGraphql:
         assert self.result["overview"] == "官方简介内容"
 
     def test_poster_url(self):
-        assert "ssis00001pl.jpg" in self.result["poster_url"]
+        assert "ssis00001ps.jpg" in self.result["poster_url"]
 
-    def test_fanart_same_as_poster(self):
-        assert self.result["fanart_url"] == self.result["poster_url"]
+    def test_fanart_url(self):
+        assert "ssis00001pl.jpg" in self.result["fanart_url"]
+
+    def test_poster_and_fanart_are_different(self):
+        assert self.result["poster_url"] != self.result["fanart_url"]
 
     def test_duration_converted_to_minutes(self):
         # 8826 秒 → 147 分钟

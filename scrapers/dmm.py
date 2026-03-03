@@ -255,7 +255,8 @@ class DMMScraper(BaseJavScraper):
     def _parse_graphql(content: dict, review: dict, dmm_id: str) -> dict:
         """将 GraphQL ppvContent 节点转换为统一 dict 格式。"""
         pkg_img = content.get("packageImage") or {}
-        poster_url = pkg_img.get("largeUrl") or pkg_img.get("mediumUrl")
+        fanart_url = pkg_img.get("largeUrl")   # pl = package large = 横版全封面
+        poster_url = pkg_img.get("mediumUrl")  # ps = package small = 竖版封面
 
         # 时长单位为秒，转换为分钟
         duration_sec = content.get("duration")
@@ -276,7 +277,7 @@ class DMMScraper(BaseJavScraper):
             "original_title": content.get("title", ""),
             "overview": content.get("description", ""),
             "poster_url": poster_url,
-            "fanart_url": poster_url,
+            "fanart_url": fanart_url,
             "release_date": release_date,
             "year": year,
             "duration": duration_min,
