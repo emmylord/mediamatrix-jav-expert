@@ -101,7 +101,10 @@ class JavExpertProvider(BaseProvider):
             else:
                 logger.debug("[JavExpert] DMM 无结果，仅使用 JavDB: %s", av_code)
 
-        return self._to_media_detail(merged, av_code, provider_id)
+        detail = self._to_media_detail(merged, av_code, provider_id)
+        logger.info("[JavExpert] 刮削成功: %s | 标题=%s | 来源=%s",
+                    av_code, detail.title, merged.get("source", "javdb"))
+        return detail
 
     # ------------------------------------------------------------------
     # 番号提取

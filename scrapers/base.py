@@ -64,6 +64,7 @@ class BaseJavScraper(ABC):
         """
         for attempt in range(1, self._max_retries + 1):
             time.sleep(self._delay)
+            logger.debug("GET %s (attempt %d/%d)", url, attempt, self._max_retries)
             try:
                 resp = self._client.get(
                     url,

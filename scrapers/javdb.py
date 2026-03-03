@@ -56,6 +56,7 @@ class JavDBScraper(BaseJavScraper):
             logger.debug("[JavDB] 搜索无精确匹配: %s", av_code)
             return None
 
+        logger.debug("[JavDB] 找到详情页: %s → %s", av_code, detail_url)
         return self.get_detail(detail_url)
 
     def get_detail(self, url: str) -> Optional[dict]:
@@ -65,7 +66,9 @@ class JavDBScraper(BaseJavScraper):
             return None
 
         soup = BeautifulSoup(resp.text, "lxml")
-        return self._parse_detail(soup, url)
+        result = self._parse_detail(soup, url)
+        logger.info("[JavDB] 解析完成: %s | 标题=%s", url, result.get("title", ""))
+        return result
 
     # ------------------------------------------------------------------
     # 搜索结果解析

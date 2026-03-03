@@ -217,10 +217,13 @@ class DMMScraper(BaseJavScraper):
 
         content = (data.get("data") or {}).get("ppvContent")
         if not content:
+            logger.debug("[DMM] ppvContent 为空: id=%s", dmm_id)
             return None
 
         review = (data.get("data") or {}).get("reviewSummary") or {}
-        return self._parse_graphql(content, review, dmm_id)
+        result = self._parse_graphql(content, review, dmm_id)
+        logger.info("[DMM] 解析完成: id=%s | 标题=%s", dmm_id, result.get("title", ""))
+        return result
 
     # ------------------------------------------------------------------
     # 搜索降级（从旧版搜索页提取 id）
