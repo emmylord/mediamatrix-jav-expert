@@ -64,6 +64,10 @@ class JavExpertProvider(BaseProvider):
         未识别到番号时返回 []，完全不影响 TMDB 等其他 Provider。
         """
         av_code = self._extract_av_code(query.title)
+        if av_code is None and query.extra.get("filename"):
+            av_code = self._extract_av_code(query.extra["filename"])
+            if av_code:
+                logger.debug("[JavExpert] 从原始文件名提取番号: %s", av_code)
         if av_code is None:
             return []
 
