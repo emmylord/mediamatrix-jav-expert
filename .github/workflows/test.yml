@@ -21,7 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install pytest pytest-cov curl_cffi beautifulsoup4 lxml httpx
+          pip install -r requirements-dev.txt
 
       - name: Run tests
         env:
